@@ -22,7 +22,9 @@ cmake ../../ \
 -DCMAKE_INSTALL_PREFIX="$ROR_INSTALL_DIR" \
 -DROR_BUILD_CONFIGURATOR:BOOL="TRUE" \
 -DCMAKE_BUILD_TYPE=$CMAKEBUILDTYPE \
--DCMAKE_CXX_FLAGS="-pipe -march=native"
+-DCMAKE_LINKER_FLAGS=-lbooost_thread \
+-DCMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO=-lboost_thread \
+-DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -I ~/rigs-of-rods/install/include/MYGUI"\
 
 # CMAKE_CXX_FLAGS (flags for compiler) - Default are:
 # -march=native  -- Optimize RoR for the CPU the build is performed on; executable will only be portable to systems with same or newer CPU architecture
@@ -33,11 +35,13 @@ cmake ../../ \
 
 
 make $ROR_MAKEOPTS
-cp -R ../../bin .
+pwd
+#cp -R ../../bin .
 sed -i '/^PluginFolder=/d' bin/plugins.cfg
 echo "PluginFolder=$ROR_INSTALL_DIR/lib/OGRE" >>bin/plugins.cfg
 
 # there's no make install target, so just copy the bin folder
+pwd
 cp -R bin "$ROR_INSTALL_DIR"
 
 echo "$(tput setaf 1)Build succeeded!"
