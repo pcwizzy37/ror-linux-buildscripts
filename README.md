@@ -5,7 +5,8 @@ With some minor adjustments they should work on Linux distributions not based on
 ### Build and install Rigs of Rods:
 Run these commands from console in this order and not simultaneously:
 ```sh
-sh dependencies_apt.sh
+sh dependencies_apt.sh (if Ubuntu or Debian)
+sh dependencies_pacman.sh (If Arch or derivatives)
 sh dependencies.sh
 sh core.sh
 sh content.sh
@@ -14,7 +15,8 @@ sh community_map.sh
 ```
   
 ##### Notes:
-* `dependencies_apt.sh` will first ask for sudo password and will prompt you a bit later to confirm the installation of the packages. Make sure the packages don't conflict with something you need (usually doesn't happen).
+* `dependencies_apt.sh` will first ask for sudo password and will prompt you a bit later to confirm the installation of the packages for Ubuntu or Debian. Make sure the packages don't conflict with something you need (usually doesn't happen).
+* `dependencies_pacman.sh` will first ask for sudo password and will prompt you a bit later to confirm the installation of the packages for Arch Linux or derivatives.
 * `deps.sh` and `core.sh` don't require user interaction.  
 * `content.sh` only requires you to choose the content you want to download in the beginning.
 * To change default directories and *make* parameters edit the `config` file (optional).
