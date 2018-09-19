@@ -27,7 +27,7 @@ cmake -DCMAKE_INSTALL_PREFIX="$ROR_INSTALL_DIR" \
 -DOGRE_CONFIG_ENABLE_ETC=TRUE \
 -DOGRE_USE_BOOST=FALSE \
 -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
--DCMAKE_CXX_FLAGS="-march=native" .
+-DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -mfpmath=sse -msse2 -mmmx -msse -msse3 -O2 -fomit-frame-pointer -fstrict-aliasing -ffast-math -mfpmath=both" .
 make $ROR_MAKEOPTS
 make install
 
@@ -36,7 +36,7 @@ cd "$ROR_SOURCE_DIR"
  wget -c http://kcat.strangesoft.net/openal-releases/openal-soft-1.16.0.tar.bz2
 cd openal-soft-1.16.0
 cmake -DCMAKE_INSTALL_PREFIX="$ROR_INSTALL_DIR" \
--DCMAKE_CXX_FLAGS="-march=native" .
+-DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -mfpmath=sse -msse2 -mmmx -msse -msse3 -O2 -fomit-frame-pointer -fstrict-aliasing -ffast-math -mfpmath=both" .
 make $ROR_MAKEOPTS
 make install
 
@@ -56,7 +56,7 @@ cmake -DCMAKE_INSTALL_PREFIX="$ROR_INSTALL_DIR" \
 -DMYGUI_BUILD_TOOLS:BOOL=OFF \
 -DMYGUI_BUILD_PLUGINS:BOOL=OFF \
 -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
--DCMAKE_CXX_FLAGS="-march=native" .
+-DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -mfpmath=sse -msse2 -mmmx -msse -msse3 -O2 -fomit-frame-pointer -fstrict-aliasing -ffast-math -mfpmath=both" .
 make $ROR_MAKEOPTS
 make install
 
@@ -71,7 +71,7 @@ cd ogre-paged
 cmake -DCMAKE_INSTALL_PREFIX="$ROR_INSTALL_DIR" \
 -DPAGEDGEOMETRY_BUILD_SAMPLES:BOOL=OFF \
 -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
--DCMAKE_CXX_FLAGS="-march=native" .
+-DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -mfpmath=sse -msse2 -mmmx -msse -msse3 -O2 -fomit-frame-pointer -fstrict-aliasing -ffast-math -mfpmath=both" .
 make $ROR_MAKEOPTS
 make install
 
@@ -85,7 +85,7 @@ cd ogre-caelum
  git pull
 cmake -DCMAKE_INSTALL_PREFIX="$ROR_INSTALL_DIR" \
 -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
--DCMAKE_CXX_FLAGS="-march=native" .
+-DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -mfpmath=sse -msse2 -mmmx -msse -msse3 -O2 -fomit-frame-pointer -fstrict-aliasing -ffast-math -mfpmath=both" .
 make $ROR_MAKEOPTS
 make install
 # important step, so the plugin can load:

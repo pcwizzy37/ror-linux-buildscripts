@@ -22,7 +22,7 @@ cmake ../../ \
 -DCMAKE_INSTALL_PREFIX="$ROR_INSTALL_DIR" \
 -DROR_BUILD_CONFIGURATOR:BOOL="TRUE" \
 -DCMAKE_BUILD_TYPE=$CMAKEBUILDTYPE \
--DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -I ~/rigs-of-rods/install/include/MYGUI"\
+-DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -mfpmath=sse -msse2 -mmmx -msse -msse3 -O2 -fomit-frame-pointer -fstrict-aliasing -ffast-math -mfpmath=both -funroll-loops -floop-parallelize-all -ftree-parallelize-loops=4 -flto -I ~/rigs-of-rods/install/include/OGRE/Bites -I ~/rigs-of-rods/install/include/MYGUI"\
 
 # CMAKE_CXX_FLAGS (flags for compiler) - Default are:
 # -march=native  -- Optimize RoR for the CPU the build is performed on; executable will only be portable to systems with same or newer CPU architecture
