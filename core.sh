@@ -22,8 +22,6 @@ cmake ../../ \
 -DCMAKE_INSTALL_PREFIX="$ROR_INSTALL_DIR" \
 -DROR_BUILD_CONFIGURATOR:BOOL="TRUE" \
 -DCMAKE_BUILD_TYPE=$CMAKEBUILDTYPE \
--DCMAKE_LINKER_FLAGS=-lbooost_thread \
--DCMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO=-lboost_thread \
 -DCMAKE_CXX_FLAGS="-fPIC -pipe -march=native -I ~/rigs-of-rods/install/include/MYGUI"\
 
 # CMAKE_CXX_FLAGS (flags for compiler) - Default are:
